@@ -71,7 +71,7 @@ namespace Process {
 #endif
             ~Sink() override
             {
-                _job.Revoke();
+                _parent.Revoke(_job.Reset());
                 Core::ServiceAdministrator::Instance().FlushLibraries();
             }
 
